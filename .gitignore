@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+.terraform.lock.hcl
+out/
+screenshots/
+CLAUDE.md
+gh-comment-48496.md
