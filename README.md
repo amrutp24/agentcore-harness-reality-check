@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/amrutp24/agentcore-harness-reality-check/actions/workflows/ci.yml/badge.svg)](https://github.com/amrutp24/agentcore-harness-reality-check/actions/workflows/ci.yml)
 
+📖 **Read the article:** [AWS says a production agent is now two API calls. I tested that.](https://builder.aws.com/content/3BnCQ3tNlxDCGakjdtowPexN1dJ/aws-says-a-production-agent-is-now-two-api-calls-i-tested-that)
+
 AWS says the new Amazon Bedrock AgentCore **managed harness** turns a
 production agent into two API calls: `CreateHarness` defines it,
 `InvokeHarness` runs it. This project tests that claim end to end —
