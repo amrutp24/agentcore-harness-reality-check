@@ -18,11 +18,14 @@ PROFILE = "dev"
 REGION = "us-east-1"
 HARNESS_NAME = "harness_probe"
 MODEL_ID = "us.anthropic.claude-haiku-4-5-20251001-v1:0"  # bare model ID fails: on-demand needs the inference profile
-EXECUTION_ROLE_ARN = "arn:aws:iam::123456789012:role/agentcore-harness-probe-role"
+ROLE_NAME = "agentcore-harness-probe-role"  # created by 00_bootstrap_iam.py
 
 session = boto3.Session(profile_name=PROFILE, region_name=REGION)
 control = session.client("bedrock-agentcore-control")
 data = session.client("bedrock-agentcore")
+
+account_id = session.client("sts").get_caller_identity()["Account"]
+EXECUTION_ROLE_ARN = f"arn:aws:iam::{account_id}:role/{ROLE_NAME}"
 
 # ---- Call 1: define the agent -------------------------------------------
 # The response nests everything under "harness", and the ARN field is
